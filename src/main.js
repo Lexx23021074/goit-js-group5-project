@@ -1,0 +1,10 @@
+import './js/about.js';
+import './js/benefits.js';
+import './js/contacts.js';
+import './js/faq.js';
+import './js/feedbacks.js';
+import './js/footer.js';
+import './js/header.js';
+import './js/hero.js';
+import './js/modal.js';
+import './js/portfolio.js';
