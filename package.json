@@ -1,11 +1,11 @@
 {
-  "name": "Love Story Agency",
+  "name": "love-story-agency",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/Love Story Agency/",
+    "build": "vite build --base=/love-story-agency/",
     "preview": "vite preview"
   },
   "devDependencies": {
