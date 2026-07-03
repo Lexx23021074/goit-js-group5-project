@@ -58,13 +58,16 @@ npm run build
 
 ## 👥 Команда проєкту
 
-Ім'я та прізвище username    
-  
-Кузьмів Регіна     regina-kuzmiv     Scrum
-Олексій            OlexaGryschenko 
-Кучмій Володимир   kuchmiy-v 
-Олійник Вікторія   vivivihadi 
-Шевчук Володимир   ghgerzx007-netizen 
+## 👥 Команда проєкту
+
+| Ім'я та прізвище | Username | Роль |
+| :--- | :--- | :--- |
+| **Тарас Федорів** | [Lexx23021074](https://github.com/Lexx23021074) | Team Lead |
+| **Кузьмів Регіна** | [regina-kuzmiv](https://github.com/regina-kuzmiv) | Scrum Master |
+| **Олексій** | [OlexaGryschenko](https://github.com/OlexaGryschenko) | Developer |
+| **Кучмій Володимир** | [kuchmiy-v](https://github.com/kuchmiy-v) | Developer |
+| **Олійник Вікторія** | [vivivihadi](https://github.com/vivivihadi) | Developer |
+| **Шевчук Володимир** | [ghgerzx007-netizen](https://github.com/ghgerzx007-netizen) | Developer |
 Тарас Федорів      Lexx23021074        Team lead
 
 ---
