@@ -1,4 +1,48 @@
-<section id="about" class="about">
-  <div class="container"></div>
+<section id="about" class="about section">
+  <div class="container">
+    <div class="about-description">
+      <h2 class="about-title decoration">
+        Meet Maria Kovalenko: Your Partner in Capturing Unforgettable Wedding
+        Moments
+      </h2>
+
+      <p class="about-text">
+        With years of experience in wedding photography, Maria specializes in
+        capturing genuine emotions and beautiful moments. Her unique approach
+        blends artistry with a personal touch, ensuring that each couple's story
+        is told through stunning imagery.
+      </p>
+    </div>
+
+    <picture class="about-img">
+      <!-- Desktop: screen width >= 1440px -->
+      <source
+        srcset="/img/about-desk@1x.jpg 1x, /img/about-desk@2x.jpg 2x"
+        media="(min-width: 1440px)"
+      />
+
+      <!-- Tablet: screen width >= 768px -->
+      <source
+        srcset="/img/about-tablet@1x.jpg 1x, /img/about-tablet@2x.jpg 2x"
+        media="(min-width: 768px)"
+      />
+
+      <!-- mobile: screen width <= 767px -->
+      <source
+        media="(max-width: 767px)"
+        srcset="/img/about-mob@1x.jpg 1x, /img/about-mob@2x.jpg 2x"
+      />
+
+      <!-- Mobile -->
+      <img
+        src="/img/about-mob@1x.jpg"
+        srcset="/img/about-mob@1x.jpg 1x, /img/about-mob@2x.jpg 2x"
+        alt="wedding photo bride with flowers"
+        loading="lazy"
+        width="335"
+        height="273"
+      />
+    </picture>
+  </div>
   <a href="#">ABOUT SECTION LOADED</a>
 </section>
