@@ -1,14 +1,14 @@
 .header {
-  /* padding: 6px 0; */
-/* background: var(--color-scheme-2-background); */
+  padding: 0;  
+  background:#fbf9f1;
+}
 
-  background: #e10b93;
+.logo {
+  display: block;
 }
 
 .header-container {
   display: flex;
-  /* flex-direction: column; */
-  /* gap: 32px; */
   align-items: center;
   text-align: center;
   justify-content: space-between;
@@ -21,18 +21,19 @@
   cursor: pointer;
 }
 
-.header-nav-list {
+.header-nav-list,
+.nav-btn 
+ {
   display: none;
 }
 
-.order-btn {
-  display: none;
-}
 
 .logo-icon {
   width: 70px;
   height: 55px;
-  color: #B09A0C; /* Задає колір для currentColor */  
+  margin-top: 6px;
+  margin-bottom: 3px;
+  color: #b09a0c;
   display: block;
   line-height: 0;
   fill: #131212;
@@ -48,77 +49,76 @@
 }
 
 .mobile-menu-icon {
-  stroke: #111111;
-  fill: #151414;
+  width: 24px;
+  height: 24px;
+  fill: #000;
 }
+
 .mobile-menu-btn {
+  margin-left: auto;
+  width: 48px;
+  height: 48px;
   background-color: transparent;
   border: none;
   padding: 0;
-  line-height: 0;
-}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-.logo{
-  display: block;
-  margin-top: 5px;
 }
-
 
 /* Tablet (768px+) */
 
 @media screen and (min-width: 768px) {
-  .order-btn {
+.header-container {
+    flex-direction: row;
+  }
 
+  .logo-icon {
+    width: 78px;
+    height: 61px;
+  }
+
+  .nav-btn {
     display: inline-block;
     text-align: center;
-    min-width: 92px;
-    margin-left: auto;
-    margin-right: 16px;
-    padding: 3px 23px;
-    background-color: #1a5901;
-    border: 1px solid #1a5901;
+    min-width: 154px;
+    margin-left: 32px;
+    padding: 8px 20px;
+    background-color: #dcc110;
+    border: 1px solid #dcc110;
     border-radius: 6px;
-
     font-family: inherit;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    color: #fff;
+    color: #000;
     text-decoration: none;
-
-    transition:
-      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 0.3s ease-in-out;
   }
 
-  .order-btn:hover,
-  .order-btn:focus {
-    background-color: #fff; /* Hover  --color-white */
-    border-color: #fff;
-    color: #010400;
-  }
-
-  .order-btn:active {
+  .nav-btn:hover,
+  .nav-btn:focus {
     background-color: #fff;
-    border-color: #fff;
-    color: #010400;
-    box-shadow: inset 2px 7px 27px -4px rgba(0, 0, 0, 0.15);
   }
+
+  .nav-btn:active {
+    box-shadow:
+      inset 0 2px 4px -2px rgba(0, 0, 0, 0.06),
+      inset 0 4px 8px -2px rgba(0, 0, 0, 0.1);
+    background: #e6d357;
+  }
+
   .mobile-menu-btn {
     display: none;
   }
-}
-/* Desktop (1440px+) */
 
-@media screen and (min-width: 1440px) {
-  .header-container {
-    flex-direction: row;
-  }
+  /* --------- Menu -------- */
 
   .header-nav {
     display: block;
+    margin-left: auto;
   }
 
   .header-nav-list {
@@ -132,32 +132,48 @@
 
   .header-nav-link {
     display: block;
-    padding: 18px 0;
+    padding: 16px 0;
+    font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
-    color: #161414;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
     text-decoration: none;
   }
 
   .header-nav-link:hover,
   .header-nav-link:focus,
   .header-nav-link.current {
-    color: rgba(255, 255, 255, 0.5); /*  --opacity-white-50 */
-    /* color: #d8d9d8;  --color-neutral-lighter */
+    color: #000;
+  background-color: rgba(0, 0, 0, 0.15); 
+  border-radius: 6px;
+  padding: 0 6px;
   }
 
-  .header-nav-link:active {
-    color: rgba(255, 255, 255, 0.6); /*  --opacity-white-60 */
-    /* color: #b2b3b2;  --color-neutral-light */
-  }
+ .header-nav-link:active {
+  color: #b09a0c;
+}
 
-  .order-btn {
-    margin-right: 0;
-    margin-left: 32px;
-  }
 
-  .logo {
+.logo {
     margin-right: auto;
+  }
+
+  .header-nav-link.disabled {
+  color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  cursor: default;
+}
+}
+
+
+
+/* =======  Desktop (1440px+) ============= */
+
+@media screen and (min-width: 1440px) {
+
+.logo-icon {
+    width: 80px;
+    height: 63px;
   }
 }
