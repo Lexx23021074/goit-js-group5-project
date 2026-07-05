@@ -82,8 +82,8 @@
   color: #000;
   text-decoration: none;
   font-weight: 500;
-  font-size: 16px;
-  margin-top: 40px;
+  font-size: 16px;  
+  margin-bottom: 40px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
