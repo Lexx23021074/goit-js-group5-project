@@ -41,7 +41,8 @@ function renderFilterButtons(categories) {
     )
     .join('');
 
-  filterEl.innerHTML = allButton + categoryButtons;
+  filterEl.innerHTML = '';
+  filterEl.insertAdjacentHTML('beforeend', allButton + categoryButtons);
 }
 function renderPhotos(photos, { append } ) {
   const markup = photos
