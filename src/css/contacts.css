@@ -1,1 +1,108 @@
-/* Contacts section styles */
+* {background-color: #fbf9f1;
+    box-sizing: border-box ;
+text-decoration: none;
+padding: 0;
+margin: 0;}
+.container 
+{
+    width: 375px;
+    padding: 64px 20px;
+    align-items: center;
+   
+}
+.contacts {
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contacts-decor {
+    align-items: center;
+    width: 335px;
+    min-height: 38;
+    justify-content: center;
+    fill: none;
+
+}
+.contacts-title {
+    font-weight: 500;
+font-size: 32px;
+line-height: 1.2;
+letter-spacing: -0.01em;
+text-align: center;
+color: #000;
+font-family: "Cormorant", sans-serif;
+}
+.contacts-text {
+    font-weight: 400;
+font-size: 18px;
+line-height: 1.5;
+text-align: center;
+color: #000;
+font-family: "Mulish", sans-serif;
+display:flex;
+text-decoration: none;
+
+}
+.contacts-info-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    padding-bottom: 24px;
+}
+
+.contacts-info {
+    font-weight: 400;
+font-size: 16px;
+line-height: 1.5;
+text-decoration: none;
+
+}
+.contacts-info a {
+    color: #000;
+    
+}
+.contacts-info-item{
+    display: flex;
+  align-items: center;
+  gap: 6px;
+    flex-direction: row;
+}
+
+
+.contacts-icon {
+    fill:none;
+    
+}
+
+
+.contacts-form {
+}
+.contacts-form-label {
+}
+.contacts-input {
+}
+.contacts-textarea {
+    resize:none;
+    border: 2px solid #000;
+border-radius: 6px;
+padding: 12px;
+width: 335px;
+height: 180px;
+background: rgba(255, 255, 255, 0);
+}
+.contacts-button {
+    border: 1px solid #dcc110;
+border-radius: 6px;
+padding: 10px 24px;
+width: 335px;
+height: 44px;
+background: #dcc110;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+gap: 8px;
+}
+
+
