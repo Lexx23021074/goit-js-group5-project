@@ -1,27 +1,26 @@
 <section class="portfolio">
   <div class="container">
-
-    <div class="portfolio-header">
-      <img class="portfolio-decor" src="./img/decoration.svg" alt="Decoration" width="300" height="20">
-      <h2 class="portfolio-title">Portfolio Highlights</h2>
+   <svg class="decoration-svg"  width="300" height="20">
+    <use href="./img/decoration-svg#icon.id"></use></svg>
+     <h2 class="portfolio-title">Portfolio Highlights</h2>
+     <ul class="portfolio-filters" id="portfolioFilters" role="tablist" aria-label="Portfolio Filters">
+      <li class="portfolio-filters-item" role="presentation">
+      <button type="button" class="portfolio-filters-btn active" role="tab" aria-selected="true" aria-controls="all" id="all-tab">All photos</button>
+    </li>
+    </ul>
+    <div class="portfolio-loader" id="portfolioLoader" aria-live="polite" aria-hidden="true">
+      <span class="portfolio-loader-spinner"></span>
+      <span class="portfolio-loader-text">Loading...</span>
     </div>
 
-    <div class="filter-buttons">
-      <button type="button" class="filter-btn active" data-filter="all">All Photos</button>
-      <button type="button" class="filter-btn" data-filter="candid">Candid Moments</button>
-      <button type="button" class="filter-btn" data-filter="portrait">Portrait Perfection</button>
-      <button type="button" class="filter-btn" data-filter="ceremony">Ceremony & Vows</button>
-      <button type="button" class="filter-btn" data-filter="celebrations">Joyful Celebrations</button>
-      <button type="button" class="filter-btn" data-filter="standart">Standart</button>
-      <button type="button" class="filter-btn" data-filter="detail">Attention to Detail</button>
+    <ul class="gallery-grid" id="galleryGrid" aria-live="polite">
+       <li class="gallery-grid-item" role="tabpanel" aria-labelledby="all-tab">
+        <img src="./img/portfolio/1.jpg" alt="Portfolio Image 1" loading="lazy">
+      </li>
+    </ul>
+
+      <button type="button" class="btn-show-more" id="btnShowMore">Show More</button>
     </div>
 
-    <div class="gallery-grid">
-      </div>
 
-    <div class="portfolio-actions">
-      <button type="button" class="btn-show-more">Show More</button>
-    </div>
-
-  </div>
 </section>

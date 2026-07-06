@@ -1,182 +1,149 @@
-const portfolioData = [
-  {
-    id: 1,
-    category: 'candid',
-    alt: 'Candid wedding moment',
-    desk1x: '/img/portfolio_images/portfolio-1-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-1-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-1-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-1-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-1-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-1-mob@2x.jpg'
-  },
-  {
-    id: 2,
-    category: 'portrait',
-    alt: 'Portrait perfection',
-    desk1x: '/img/portfolio_images/portfolio-2-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-2-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-2-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-2-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-2-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-2-mob@2x.jpg'
-  },
-  {
-    id: 3,
-    category: 'ceremony',
-    alt: 'Ceremony and vows',
-    desk1x: '/img/portfolio_images/portfolio-3-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-3-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-3-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-3-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-3-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-3-mob@2x.jpg'
-  },
-  {
-    id: 4,
-    category: 'celebrations',
-    alt: 'Joyful celebrations',
-    desk1x: '/img/portfolio_images/portfolio-4-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-4-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-4-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-4-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-4-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-4-mob@2x.jpg'
-  },
-  {
-    id: 5,
-    category: 'standart',
-    alt: 'Standard wedding shot',
-    desk1x: '/img/portfolio_images/portfolio-5-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-5-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-5-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-5-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-5-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-5-mob@2x.jpg'
-  },
-  {
-    id: 6,
-    category: 'detail',
-    alt: 'Attention to detail',
-    desk1x: '/img/portfolio_images/portfolio-6-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-6-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-6-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-6-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-6-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-6-mob@2x.jpg'
-  },
-  {
-    id: 7,
-    category: 'candid',
-    alt: 'Another candid moment',
-    desk1x: '/img/portfolio_images/portfolio-7-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-7-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-7-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-7-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-7-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-7-mob@2x.jpg'
-  },
-  {
-    id: 8,
-    category: 'portrait',
-    alt: 'Beautiful portrait',
-    desk1x: '/img/portfolio_images/portfolio-8-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-8-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-8-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-8-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-8-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-8-mob@2x.jpg'
-  },
-  {
-    id: 9,
-    category: 'ceremony',
-    alt: 'Wedding rings close up',
-    desk1x: '/img/portfolio_images/portfolio-9-desk@1x.jpg',
-    desk2x: '/img/portfolio_images/portfolio-9-desk@2x.jpg',
-    tab1x: '/img/portfolio_images/portfolio-9-tablet@1x.jpg',
-    tab2x: '/img/portfolio_images/portfolio-9-tablet@2x.jpg',
-    mob1x: '/img/portfolio_images/portfolio-9-mob@1x.jpg',
-    mob2x: '/img/portfolio_images/portfolio-9-mob@2x.jpg'
-  }
-];
-const galleryGrid = document.querySelector('.gallery-grid');
-const filterButtonsContainer = document.querySelector('.filter-buttons');
-const btnShowMore = document.querySelector('.btn-show-more');
+(function () {
+  const API_BASE = 'https://wedding-photographer.b.goit.study/api';
+  const CATEGORIES_URL = `${API_BASE}/categories`;
+  const PORTFOLIO_URL = `${API_BASE}/portfolio`;
 
 
-let currentCategory = 'all';
-let itemsToShow = 6;
+const INITIAL_LIMIT = 9;
+const LOAD_MORE_INCREMENT = 3;
+const filterEl = document.getElementById('portfolioFilters');
+const gridEl = document.getElementById('galleryGrid');
+const loaderEl = document.getElementById('portfolioLoader');
+const btnShowMore = document.getElementById('btnShowMore');
 
-
-function createCardTemplate(item) {
-  return `
-    <div class="gallery-item" data-category="${item.category}">
-      <picture>
-        <source
-          media="(min-width: 1440px)"
-          srcset="${item.desk1x} 1x, ${item.desk2x} 2x"/>
-        <source media="(min-width: 768px)"
-          srcset="${item.tab1x} 1x, ${item.tab2x} 2x" />
-        <sourc
-        media="(max-width: 767px)"
-          srcset="${item.mob1x} 1x, ${item.mob2x} 2x" />
-        <img
-          src="${item.mob1x}"
-          srcset="${item.mob1x} 1x, ${item.mob2x} 2x"
-          alt="${item.alt}"
-          loading="lazy"
-          width="335"
-          height="335"
-        />
-      </picture>
-    </div>
-  `;
+let state = {
+  categoryId: '',
+  loadedCount: 0,
+  totalCount: 0,
+  page: 1,
+};
+function showLoader() {
+  loaderEl.classList.add('is-visible');
+  loaderEl.setAttribute('aria-hidden', 'false');
 }
+function hideLoader() {
+  loaderEl.classList.remove('is-visible');
+  loaderEl.setAttribute('aria-hidden', 'true');
+}
+function renderFilterButtons(categories) {
+  const allButton = `
+    <li class="portfolio-filters-item" role="presentation">
+      <button type="button" class="portfolio-filters-btn active" role="tab" aria-selected="true" data-category-id="">All photos</button>
+    </li>
+    `;
+  const categoryButtons = categories
+    .map(
+      (category) => `
+      <li class="portfolio-filters-item" role="presentation">
+        <button type="button" class="portfolio-filters-btn" role="tab" aria-selected="false" data-category-id="${category.id}">${category.name}</button>
+      </li>
+    `
+    )
+    .join('');
 
-function updateGallery() {
-
-  const filteredData = currentCategory === 'all'
-    ? portfolioData
-    : portfolioData.filter(item => item.category === currentCategory);
-
-
-  const itemsToRender = filteredData.slice(0, itemsToShow);
-
-
-  galleryGrid.innerHTML = itemsToRender.map(createCardTemplate).join('');
-
-  if (itemsToShow >= filteredData.length) {
-    btnShowMore.style.display = 'none';
+  filterEl.innerHTML = allButton + categoryButtons;
+}
+function renderPhotos(photos, { append } ) {
+  const markup = photos
+    .map(
+      (photo) => `
+      <li class="gallery-item">
+        <img class="gallery-img" src="${photo.imageUrl}" alt="${photo.title}" loading="lazy"/>
+      </li>
+    `
+    )
+    .join('');
+  if (append) {
+    gridEl.insertAdjacentHTML('beforeend', markup);
   } else {
-    btnShowMore.style.display = 'inline-flex';
+    gridEl.innerHTML = markup;
   }
 }
+function updateShowMoreVisibility() {
+  if (state.loadedCount >= state.totalCount) {
+    btnShowMore.classList.add('is-hidden');
+  } else {
+    btnShowMore.classList.remove('is-hidden');
+    btnShowMore.ariaDisabled = 'false';
+  }
+  }
+function buildPortfolioUrl({ page, limit, categoryId }) {
+  const url = new URL(PORTFOLIO_URL);
+  url.searchParams.set('page', page);
+  url.searchParams.set('limit', limit);
+  if (categoryId) {
+    url.searchParams.set('category', categoryId);
+  }
+  return url.toString();
+}
+async function fetchCategories() {
+  try {
+    const response = await fetch(CATEGORIES_URL);
+    if (!response.ok) {
+      throw new Error(`Categories request failed: ${response.status}`);
+    }
+      const categories = await response.json();
+      renderFilterButtons(categories);
+    } catch (error) {
+      console.error('Error fetching categories:', error);
+      filterEl.innerHTML = '<li class="portfolio-filters-item">Failed to load categories</li>';
+    }
+    }
+    async function fetchPortfolio({ page, limit, categoryId, append }) {
+      showLoader();
+      btnShowMore.ariaDisabled = 'true';
+      try {
+        const url = buildPortfolioUrl({ page, limit, categoryId });
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Portfolio request failed: ${response.status}`);
+        }
+        const data = await response.json();
+        renderPhotos(data.weddingPhotos, { append });
+        state.totalCount = data.totalCount;
+        state.loadedCount = append ? state.loadedCount + data.weddingPhotos.length : data.weddingPhotos.length;
+        updateShowMoreVisibility();
+      } catch (error) {
+        console.error('Error fetching portfolio:', error);
+        if (!append) {
+          gridEl.innerHTML = '<li class="gallery-item">Failed to load portfolio</li>';
+        }
+      } finally {
+        hideLoader();
+      }
+    }
+    function loadInitialPortfolio(categoryId) {
+      state.categoryId = categoryId;
+      state.page = 1;
+      state.loadedCount = 0;
+      fetchPortfolio({ page: 1, limit: INITIAL_LIMIT, categoryId, append: false });
+    }
+    function loadMorePortfolio() {
+      state.page += 1;
+      fetchPortfolio({ page: state.page, limit: LOAD_MORE_INCREMENT, categoryId: state.categoryId, append: true });
+    }
 
 
-filterButtonsContainer.addEventListener('click', (event) => {
-  const clickedBtn = event.target.closest('.filter-btn');
+
+filterEl.addEventListener('click', event => {
+  const clickedBtn = event.target.closest('.portfolio-filters-btn');
 
 
   if (!clickedBtn) return;
 
 
-  filterButtonsContainer.querySelector('.filter-btn.active')?.classList.remove('active');
-  clickedBtn.classList.add('active');
-
-  currentCategory = clickedBtn.dataset.filter;
-  itemsToShow = 6;
-
-
-  updateGallery();
+  filterEl.querySelectorAll('.portfolio-filters-btn').forEach(btn => { btn.classList.remove('active');
+  btn.setAttribute('aria-selected', 'false');
 });
+btn.classList.add('active');
+btn.setAttribute('aria-selected', 'true');
+const categoryId = btn.dataset.categoryId || '';
+loadInitialPortfolio(categoryId);
+    });
 
 
-btnShowMore.addEventListener('click', () => {
-  itemsToShow += 3;
-  updateGallery();
-});
 
-
-document.addEventListener('DOMContentLoaded', () => {
-  updateGallery();
-});
+btnShowMore.addEventListener('click', loadMorePortfolio);
+fetchCategories();
+loadInitialPortfolio('');
+})

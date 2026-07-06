@@ -1,89 +1,110 @@
 /* Portfolio Section Styles */
 .portfolio {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 64px 0;
   background-color: #FBF9F1;
 }
 
-.portfolio .container {
-  max-width: 375px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+.decoration-svg {
+  display: block;
+  margin: 0 auto 24px auto;
 }
 
-
-.portfolio-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 32px;
-}
 
 .portfolio-title {
-  font-family: 'Cormorant', serif;
   font-size: 32px;
-  font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
   color: #000000;
-  margin-bottom: 16px;
+  margin: 0 0 20px;
 }
-.portfolio-decor {
-  display: block;
-  width: 300px;
-  height: 20px;
-  margin: 0 auto 18px auto;
-}
-
-
-
-
-.filter-buttons {
+.portfolio-filters {
+  list-style: none;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap
+  align-items: center;
+  justify-content:center;
   gap: 8px;
-  margin-bottom: 32px;
+  margin: 0 0 16px;
+  padding: 0;
 }
 
-.filter-btn {
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 10px 16px;
+.portfolio-filters-item {
+  margin: 0;
+}
+
+
+.portfolio-filters-btn {
+  font-family: var(--font-family-main);
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 4px;
-  border: 1px solid #000000;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition:
+  background-color 0.2s ease,
+  border-color 0.2s ease,
+  color 0.2s ease;
+  white-space: nowrap;
+}
+
+.portfolio-loader {
+  font-family: var(--font-family-main);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #000000;
+  font-size: 13px;
+}
+
+.portfolio-filters-btn.active {
   background-color: #FFFFFF;
   color: #000000;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border-color: #000000;
+  font-weight: 600;
+}
+.portfolio-filters-btn:hover {
+  color: #000000;
 }
 
-.filter-btn.active,
-.filter-btn:hover {
-  background-color: #000000;
-  color: #FFFFFF;
+.portfolio-loader.is-visible {
+  display: flex;
 }
-
-
+.portfolio-loader-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid #d8cdb8;
+  border-top-color: #a9925f;
+  border-radius: 50%;
+  animation: portfolio-spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .gallery-grid {
+  list-style: none;
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-  max-width: 335px;
-  margin: 0 auto 32px auto;
+  padding: 0;
+  margin: 0;
 }
 
 .gallery-item {
-  width: 100%;
-  height: 335px;
   overflow: hidden;
-  border-radius: 12px;
+  aspect-ratio: 4 / 5;
+  background-color: #eee;
+  border-radius: 16px;
 }
 
-.gallery-item img {
+.gallery-img {
   display: block;
   width: 100%;
   height: 100%;
@@ -91,158 +112,103 @@
   transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
+.gallery-item:hover .gallery-img {
   transform: scale(1.03);
-}
-
-.portfolio-actions {
-  display: flex;
-  justify-content: center;
 }
 
 
 .btn-show-more {
-  display: inline-flex;
+  display: block;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 335px;
-  height: 44px;
-
+  margin-top: 24px;
+  line-height: 1.5;
   background-color: #DCC110;
-  border: 1px solid #DCC110;
+  border: 2px solid #DCC110;
   border-radius: 6px;
-
+  padding: 10px 24px;
   color: #000000;
-  font-family: inherit;
+  font-family: var(--font-family-main);
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease,
+  opacity 0.2s ease;
 }
 
 .btn-show-more:hover {
-  background-color: #c4ab0e;
+  background-color: #FFFFFF;
+  border-color: #DCC110;
+}
+.btn-show-more:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-show-more.is-hidden {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
   .portfolio {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
-
-  .portfolio .container {
-    max-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .portfolio-title {
-    font-size: 48px;
+    padding: 64px 0;
   }
 
 
   .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 24px;
-    max-width: 704px;
-    margin-bottom: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .gallery-item {
-    height: 340px;
+    width: calc((100% - 24px) / 2);
+    max-width: 342px;
+  }
+  .portfolio-filters-btn {
+    padding: 10px 16px;
+    font-size: 16px;
   }
 
-
   .btn-show-more {
-    width: 310px;
+    width: 100%;
+    max-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 
-@media screen and (min-width: 768px) {
-  .portfolio {
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
 
-  .portfolio .container {
-    max-width: 768px;
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-
-  .portfolio-title {
-    font-size: 48px;
-  }
-  .portfolio-decor {
-    width: 300px;
-    height: 20px;
-  }
-
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    max-width: 704px;
-    margin-bottom: 40px;
-  }
-
-  .gallery-item {
-    height: 340px;
-  }
-
-
-  .btn-show-more {
-    width: 310px;
-  }
-}
 @media screen and (min-width: 1440px) {
   .portfolio {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 92px 0;
   }
 
-  .portfolio .container {
-    max-width: 1342px;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
 
   .portfolio-title {
-    font-size: 64px;
+    font-size: 48px;
     margin-bottom: 24px;
   }
-  .portfolio-decor {
-    width: 300px;
-    height: 20px;
-  }
-
-  .portfolio-header::after {
-    width: 60px;
-  }
-
-  .portfolio-header {
-    margin-bottom: 40px;
-  }
-
-
-  .filter-btn {
-    padding: 10px 24px;
-    border-width: 2px;
-  }
-
-  .filter-buttons {
-    margin-bottom: 40px;
+  .portfolio-filters {
+    margin-bottom: 32px;
   }
 
 
   .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 1312px;
-    margin-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;;
+    margin-bottom: 32px;
   }
 
   .gallery-item {
-    height: 420px;
+    width: calc((100% - 48px) / 3);
+    max-width: 384px;
   }
 }
