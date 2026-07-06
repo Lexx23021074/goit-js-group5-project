@@ -1,4 +1,4 @@
-(function () {
+
   const API_BASE = 'https://wedding-photographer.b.goit.study/api';
   const CATEGORIES_URL = `${API_BASE}/categories`;
   const PORTFOLIO_URL = `${API_BASE}/portfolio`;
@@ -24,6 +24,19 @@ function showLoader() {
 function hideLoader() {
   loaderEl.classList.remove('is-visible');
   loaderEl.setAttribute('aria-hidden', 'true');
+}
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>"']/g, function (match) {
+    const escapeChars = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    };
+    return escapeChars[match] || match;
+  });
 }
 function renderFilterButtons(categories) {
   const allButton = `
@@ -57,7 +70,8 @@ function renderPhotos(photos, { append } ) {
   if (append) {
     gridEl.insertAdjacentHTML('beforeend', markup);
   } else {
-    gridEl.innerHTML = markup;
+    gridEl.textContent = '';
+    gridEl.insertAdjacentHTML('beforeend', markup);
   }
 }
 function updateShowMoreVisibility() {
@@ -87,7 +101,11 @@ async function fetchCategories() {
       renderFilterButtons(categories);
     } catch (error) {
       console.error('Error fetching categories:', error);
-      filterEl.innerHTML = '<li class="portfolio-filters-item">Failed to load categories</li>';
+      filterEl.textContent = '';
+      const errorItem = document.createElement('li');
+      errorItem.className = 'portfolio-filters-item';
+      errorItem.textContent = 'Failed to load categories';
+      filterEl.appendChild(errorItem);
     }
     }
     async function fetchPortfolio({ page, limit, categoryId, append }) {
@@ -107,7 +125,11 @@ async function fetchCategories() {
       } catch (error) {
         console.error('Error fetching portfolio:', error);
         if (!append) {
-          gridEl.innerHTML = '<li class="gallery-item">Failed to load portfolio</li>';
+          gridEl.textContent = '';
+          const errorItem = document.createElement('li');
+          errorItem.className = 'gallery-item';
+          errorItem.textContent = 'Failed to load portfolio';
+          gridEl.appendChild(errorItem);
         }
       } finally {
         hideLoader();
@@ -126,14 +148,14 @@ async function fetchCategories() {
 
 
 
-filterEl.addEventListener('click', event => {
+filterEl.addEventListener('click', (event) => {
   const clickedBtn = event.target.closest('.portfolio-filters-btn');
 
 
   if (!clickedBtn) return;
 
 
-  filterEl.querySelectorAll('.portfolio-filters-btn').forEach(btn => { btn.classList.remove('active');
+  filterEl.querySelectorAll('.portfolio-filters-btn').forEach((btn) => { btn.classList.remove('active');
   btn.setAttribute('aria-selected', 'false');
 });
 btn.classList.add('active');
@@ -147,4 +169,4 @@ loadInitialPortfolio(categoryId);
 btnShowMore.addEventListener('click', loadMorePortfolio);
 fetchCategories();
 loadInitialPortfolio('');
-})
+
