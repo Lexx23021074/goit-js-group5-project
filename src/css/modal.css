@@ -54,7 +54,7 @@
   margin: 0 0 24px;
   text-align: center;
 
-  font: "Cormorant", sans-serif;
+  font-family: "Cormorant", sans-serif;
   font-size: 32px;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -118,3 +118,43 @@
 .no-scroll {
   overflow: hidden;
 }  
+
+
+/* ========= Tablet: 768px ========  */
+@media screen and (min-width: 768px) {
+  .modal {
+    border-radius: 24px;
+    padding: 64px 32px;
+    width: 704px;
+    height: 700px;
+    max-width: 768px;
+  }
+
+  .modal-close-btn {
+    width: 32px;
+    height: 32px;
+    top: 20px;
+    right: 20px;
+  }
+
+.modal-title {    
+  margin-bottom: 16px;
+}
+
+.modal-title br {
+    display: none;
+  }
+
+  .modal-image {
+    height: 394px;
+    object-fit: cover;
+  }
+}
+
+/* Desktop: 1280px (або 1440px) та вище */
+@media screen and (min-width: 1280px) {
+  .modal {
+    width: 768px;
+    padding: 64px;
+  } 
+  }
