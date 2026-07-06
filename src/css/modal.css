@@ -1,1 +1,120 @@
-/* Modal section styles */
+.modal {
+  position: relative;
+
+  width: 335px;
+  padding: 64px 20px;
+
+  background: #fff;
+  border-radius: 24px;
+
+  max-width: 100%;
+  max-height: calc(100vh - 40px);
+
+  /* overflow-y: auto; */
+  overflow: hidden;
+
+
+
+  border: 1px solid red;
+}
+
+/* Кнопка закриття */
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  stroke: #111;
+  fill: none;
+
+  transition: stroke 250ms ease;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  stroke: #666;
+}
+
+/* Заголовок */
+
+.modal-title {
+  margin: 0 0 24px;
+  text-align: center;
+
+  font: "Cormorant", sans-serif;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #000;
+}
+
+/* Фото */
+
+.modal-image {
+  display: block;
+
+  width: 100%;
+  border-radius: 16px;
+
+  margin-bottom: 20px;
+}
+
+/* Текст */
+
+.modal-text {
+  margin: 0;
+  font: 400 18px / 1.5 "Mulish", sans-serif;
+  text-align: center;
+  color: #000;
+}
+
+
+/* =======  visible ============ */
+.backdrop {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background-color: rgba(17, 17, 17, 0.4);
+
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease;
+
+  z-index: 1000;
+}
+
+/* ======= invizible ============== */
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}  
