@@ -1,6 +1,7 @@
 /* FAQ section styles */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-
+.faq {
+  background-color: var(--bg-color-scheme-2);
+}
 .faq-container {
   display: flex;
   flex-direction: column;
@@ -30,11 +31,13 @@
   }
 }
 .faq-text {
-  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 150%;
 }
+
+/* #region ACCORDITION */
+
 .accordion-container {
   gap: 20px;
 }
@@ -51,48 +54,6 @@
   background-color: #faf7e6;
   box-sizing: border-box;
 }
-.ac .ac-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  font-family: 'Mulish', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 150%;
-  margin: 0;
-  /* padding: 20px 72px 20px 24px; */
-}
-/* .ac .ac-trigger {
-  font:
-    bold 16px Arial,
-    sans-serif;
-  color: var(--color-black);
-  text-align: left;
-  width: 100%;
-  padding: 20px 72px 20px 24px;
-  display: block;
-  cursor: pointer;
-  background-color: transparent;
-  transition: color 0.25s ease;
-  position: relative;
-  text-decoration: none;
-  margin: 0;
-  border: 0;
-}
-.ac .icon {
-} */
-/* .ac .ac-icon::after {
-  content: '+';
-  text-align: center;
-  width: 24px;
-
-  font-size: 24px;
-  transform: translate(0, -50%);
-  position: absolute;
-  right: 10px;
-  top: 50%;
-} */
 
 .ac .ac-panel {
   overflow: hidden;
@@ -136,4 +97,11 @@
   gap: 24px;
   background: transparent;
   border: 0;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  margin: 0;
 }
+
+/* #endregion */

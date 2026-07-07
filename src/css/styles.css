@@ -13,6 +13,8 @@
 
 /* Sections style */
 @import url('./header.css');
+@import url('./mobile-menu.css');
+
 @import url('./about.css');
 @import url('./benefits.css');
 @import url('./contacts.css');
