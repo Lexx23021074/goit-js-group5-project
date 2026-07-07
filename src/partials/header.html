@@ -1,4 +1,40 @@
 <header id="header" class="header">
-  <div class="container"></div>
-  <a href="#">HEADER SECTION LOADED</a>
+  <div class="container header-container">
+    <a href="./index.html" class="logo" aria-label="Wedding photographer">
+      <!-- Виклик іконки логотипу -->
+      <svg class="logo-icon" width="70" height="55">
+        <use href="/img/sprite.svg#logo-icon"></use>
+      </svg>
+    </a>
+
+    <nav class="header-nav">
+      <ul class="header-nav-list">
+        <li class="header-nav-item">
+          <a href="#about" class="header-nav-link">About Me</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#benefits" class="header-nav-link">Benefits</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#portfolio" class="header-nav-link">Portfolio</a>
+        </li>
+        <li class="header-nav-item">
+          <a href="#faq" class="header-nav-link">FAQ</a>
+        </li>
+      </ul>
+    </nav>
+
+    <a class="nav-btn" href="#contacts">Book a Session</a>
+
+    <button
+      class="mobile-menu-btn"
+      type="button"
+      aria-label="Open mobile menu"
+      aria-expanded="false"
+    >
+      <svg class="mobile-menu-icon" width="24" height="24">
+        <use href="/img/sprite.svg#burgermenu-icon"></use>
+      </svg>
+    </button>
+  </div>
 </header>
