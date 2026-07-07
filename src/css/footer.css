@@ -143,15 +143,15 @@
   fill: var(--focus-color, #f2c94c);
 }
 /* --- КНОПКА FACEBOOK (Суворо по макету) --- */
-/* Додай клас .facebook-btn до тегу <li> з фейсбуком у твоєму HTML */
+/* Додай клас .facebook-btn до тегу <li> з фейсбуком у твоєму HTML 
 .facebook-btn {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 250px;
-  border: 2px solid var(--focus-color, #f2c94c);
-  border-radius: 6px;
+   border: 2px solid var(--focus-color, #f2c94c);
+  border-radius: 6px; 
   padding: 4px 4px 4px 0px;
   box-sizing: border-box;
   transition:
@@ -166,8 +166,8 @@
 
 .facebook-btn:hover .social-link,
 .facebook-btn:focus .social-link {
-  color: #1c1b17; /* Текст залишається темним при наведенні */
-}
+  color: #1c1b17; /* Текст залишається темним при наведенні 
+}*/
 
 /* =========================================
    Tablet & Desktop Styles (768px+)
