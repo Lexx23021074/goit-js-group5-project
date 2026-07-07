@@ -83,9 +83,6 @@
 
 
 @media screen and (min-width: 768px) {
-  .container{
-    min-width: 768px;
-  }
   .benefits-decor-icon {
     padding-bottom: 16px;
   }
@@ -96,8 +93,7 @@
 
   .benefits-list {
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
   }
 
   .benefits-card,
@@ -111,14 +107,8 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .container{
-    min-width: 1440px;
-  }
-  
   .benefits-card,
   .benefits-card-tall {
     width: 320px;
   }
- 
-
 }
