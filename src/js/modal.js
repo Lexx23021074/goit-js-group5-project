@@ -1,1 +1,1 @@
-console.log('Modal module loaded');
+// console.log('Modal module loaded');
