@@ -13,7 +13,6 @@
 .portfolio-title {
   font-size: 32px;
   line-height: 1.2;
-  letter-spacing: -0.01em;
   text-align: center;
   color: #000000;
   margin: 0 0 20px;
@@ -36,6 +35,12 @@
 
 .portfolio-filters-btn {
   font-family: var(--font-family-main);
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.01em;
+  height: 44px;
   font-size: 16px;
   font-weight: 400;
   color: #000000;
@@ -92,6 +97,7 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   gap: 16px;
   padding: 0;
   margin: 0;
@@ -99,9 +105,11 @@
 
 .gallery-item {
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   background-color: #eee;
   border-radius: 16px;
+  width: 100%;
+  max-width: 335px;
 }
 
 .gallery-img {
@@ -119,21 +127,25 @@
 
 .btn-show-more {
   display: block;
+  box-sizing: border-box;
+  display: flex;
+  height: 44px;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin-top: 24px;
   line-height: 1.5;
   background-color: #DCC110;
-  border: 2px solid #DCC110;
+  border: 1px solid #DCC110;
   border-radius: 6px;
-  padding: 10px 24px;
+  padding: 0 24px;
   color: #000000;
   font-family: var(--font-family-main);
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease,
+  border-color 0.2s ease,
   opacity 0.2s ease;
 }
 
@@ -160,18 +172,13 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
   }
 
   .gallery-item {
-    width: calc((100% - 24px) / 2);
-    max-width: 342px;
-  }
-  .portfolio-filters-btn {
-    padding: 10px 16px;
-    font-size: 16px;
+    width: 340px;
+    max-width: 340px;
+    height: 340px;
+    aspect-ratio: auto;
   }
 
   .btn-show-more {
@@ -204,11 +211,11 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;;
-    margin-bottom: 32px;
   }
 
   .gallery-item {
     width: calc((100% - 48px) / 3);
     max-width: 384px;
+    height: 421.33px;
   }
 }

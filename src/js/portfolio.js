@@ -48,7 +48,7 @@ function renderFilterButtons(categories) {
     .map(
       (category) => `
       <li class="portfolio-filters-item" role="presentation">
-        <button type="button" class="portfolio-filters-btn" role="tab" aria-selected="false" data-category-id="${category.id}">${category.name}</button>
+        <button type="button" class="portfolio-filters-btn" role="tab" aria-selected="false" data-category-id="${category._id}">${category.title}</button>
       </li>
     `
     )
@@ -118,9 +118,9 @@ async function fetchCategories() {
           throw new Error(`Portfolio request failed: ${response.status}`);
         }
         const data = await response.json();
-        renderPhotos(data.weddingPhotos, { append });
+        renderPhotos(data.results, { append });
         state.totalCount = data.totalCount;
-        state.loadedCount = append ? state.loadedCount + data.weddingPhotos.length : data.weddingPhotos.length;
+        state.loadedCount = append ? state.loadedCount + data.results.length : data.results.length;
         updateShowMoreVisibility();
       } catch (error) {
         console.error('Error fetching portfolio:', error);
