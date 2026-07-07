@@ -1,3 +1,9 @@
+.header .container{
+  padding-top: 0;
+  padding-bottom: 0;
+
+}
+
 .header {
   padding: 0;  
   background:#fbf9f1;
@@ -11,7 +17,11 @@
   display: flex;
   align-items: center; 
   justify-content: space-between;
+  /* padding-top: 0;
+  padding-bottom: 0; */
 }
+
+
 
 .header-nav-link,
 .logo,
