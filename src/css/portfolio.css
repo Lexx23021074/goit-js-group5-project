@@ -1,7 +1,7 @@
 /* Portfolio Section Styles */
 .portfolio {
   padding: 64px 0;
-  background-color: #FBF9F1;
+  background-color: #fbf9f1;
 }
 
 .decoration-svg {
@@ -9,10 +9,10 @@
   margin: 0 auto 24px auto;
 }
 
-
 .portfolio-title {
   font-size: 32px;
   line-height: 1.2;
+  letter-spacing: -0.01em;
   text-align: center;
   color: #000000;
   margin: 0 0 20px;
@@ -22,7 +22,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   gap: 8px;
   margin: 0 0 16px;
   padding: 0;
@@ -32,15 +32,8 @@
   margin: 0;
 }
 
-
 .portfolio-filters-btn {
   font-family: var(--font-family-main);
-  box-sizing: border-box;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: -0.01em;
-  height: 44px;
   font-size: 16px;
   font-weight: 400;
   color: #000000;
@@ -50,9 +43,9 @@
   padding: 6px 12px;
   cursor: pointer;
   transition:
-  background-color 0.2s ease,
-  border-color 0.2s ease,
-  color 0.2s ease;
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
   white-space: nowrap;
 }
 
@@ -68,7 +61,7 @@
 }
 
 .portfolio-filters-btn.active {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   color: #000000;
   border-color: #000000;
   font-weight: 600;
@@ -86,7 +79,7 @@
   border: 2px solid #d8cdb8;
   border-top-color: #a9925f;
   border-radius: 50%;
-  animation: portfolio-spin 1s linear infinite;
+  animation: spin 1s linear infinite; /* Р—РјС–РЅРµРЅРѕ Р· portfolio-spin РЅР° spin */
 }
 @keyframes spin {
   to {
@@ -97,7 +90,6 @@
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
   gap: 16px;
   padding: 0;
   margin: 0;
@@ -105,18 +97,17 @@
 
 .gallery-item {
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 5;
   background-color: #eee;
   border-radius: 16px;
-  width: 100%;
-  max-width: 335px;
 }
 
 .gallery-img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 100%; /* Р§С–С‚РєРѕ РєР°Р¶РµРјРѕ Р·Р°Р№РЅСЏС‚Рё РІСЃСЋ РІРёСЃРѕС‚Сѓ РєР°СЂС‚РєРё */
   object-fit: cover;
+  display: block; /* Р—Р°Р»РёС€Р°С”РјРѕ block, Р°Р»Рµ Р· 100% height РІС–РЅ Р·Р°РїСЂР°С†СЋС” */
   transition: transform 0.3s ease;
 }
 
@@ -124,34 +115,30 @@
   transform: scale(1.03);
 }
 
-
 .btn-show-more {
   display: block;
-  box-sizing: border-box;
-  display: flex;
-  height: 44px;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin-top: 24px;
   line-height: 1.5;
-  background-color: #DCC110;
-  border: 1px solid #DCC110;
+  background-color: #dcc110;
+  border: 2px solid #dcc110;
   border-radius: 6px;
-  padding: 0 24px;
+  padding: 10px 24px;
   color: #000000;
   font-family: var(--font-family-main);
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease,
-  border-color 0.2s ease,
-  opacity 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .btn-show-more:hover {
-  background-color: #FFFFFF;
-  border-color: #DCC110;
+  background-color: #ffffff;
+  border-color: #dcc110;
 }
 .btn-show-more:disabled {
   opacity: 0.5;
@@ -166,19 +153,23 @@
     padding: 64px 0;
   }
 
-
   .gallery-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
   .gallery-item {
-    width: 340px;
-    max-width: 340px;
-    height: 340px;
-    aspect-ratio: auto;
+    width: calc((100% - 24px) / 2);
+    max-width: 342px;
+  }
+  .portfolio-filters-btn {
+    padding: 10px 16px;
+    font-size: 16px;
   }
 
   .btn-show-more {
@@ -189,13 +180,10 @@
   }
 }
 
-
-
 @media screen and (min-width: 1440px) {
   .portfolio {
     padding: 92px 0;
   }
-
 
   .portfolio-title {
     font-size: 48px;
@@ -205,17 +193,16 @@
     margin-bottom: 32px;
   }
 
-
   .gallery-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 24px;;
+    gap: 24px;
+    margin-bottom: 32px;
   }
 
   .gallery-item {
     width: calc((100% - 48px) / 3);
     max-width: 384px;
-    height: 421.33px;
   }
 }
