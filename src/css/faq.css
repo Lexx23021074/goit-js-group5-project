@@ -31,7 +31,7 @@
   }
 }
 .faq-title {
-  font-family: 'Cormorant';
+  font-family: 'Cormorant', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
