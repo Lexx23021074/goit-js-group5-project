@@ -9,14 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggleMenu = () => {
     const isOpen = mobileMenu.classList.toggle('is-open');
     openMenuBtn.setAttribute('aria-expanded', isOpen);
-    // Block background scrolling when the menu is open
+    // Блокуємо скрол фону, коли меню відкрите
     document.body.style.overflow = isOpen ? 'hidden' : ''; 
   };
 
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn.addEventListener('click', toggleMenu);
 
-  // Close the menu clicking link
+  // Закриваємо меню при кліку на будь-яке посилання
   menuLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('is-open');
