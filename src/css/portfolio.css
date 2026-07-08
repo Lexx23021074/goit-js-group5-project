@@ -1,6 +1,7 @@
 /* Portfolio Section Styles */
 .portfolio {
-  padding: 64px 0;
+  padding: 64px 16px; /* ЗМІНИТИ З padding: 64px 0; для захисту від вилазіння на 320px */
+  box-sizing: border-box; /* ДОДАТИ */
   background-color: #fbf9f1;
 }
 
@@ -34,13 +35,13 @@
 
 .portfolio-filters-btn {
   font-family: var(--font-family-main);
-  font-size: 16px;
+  font-size: 14px; /* Опціонально зменшити з 16px для 320px */
   font-weight: 400;
   color: #000000;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 4px;
-  padding: 6px 12px;
+  padding: 6px 10px; /* ЗМІНИТИ З padding: 6px 12px; для економії простору */
   cursor: pointer;
   transition:
     background-color 0.2s ease,
