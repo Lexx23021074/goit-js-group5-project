@@ -1,6 +1,7 @@
 /* About section styles */
 .about.section {
-  padding-block: 64px;
+  padding-block: 48px;
+  background-color: #fbf9f1;
 }
 
 .about .container {
@@ -14,7 +15,8 @@
 
 .about-description {
   /* width: 100%; */
-  width: 335px;
+  width: 100%; /* ЗМІНИТИ З 335px */
+  max-width: 335px; /* ДОДАТИ */
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -40,10 +42,10 @@
   content: '';
   display: block;
   margin-right: 8px;
-  width: 299.5px;
+  width: 100%; /* ЗМІНИТИ З 299.5px */
   height: 20.32px;
 
-  background-image: url('/src/img/decoration.svg');
+  background-image: url('/img/decoration.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -57,8 +59,9 @@
 }
 
 .about-img {
-  width: 335px;
-  height: 273px;
+  width: 100%; /* ЗМІНИТИ З 335px */
+  max-width: 335px; /* ДОДАТИ */
+  height: auto; /* ЗМІНИТИ З 273px */
   flex-shrink: 0;
 }
 .about-img img {
