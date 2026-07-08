@@ -1,6 +1,17 @@
 /* FAQ section styles */
 .faq {
   background-color: var(--bg-color-scheme-2);
+  padding: 64px 0;
+}
+@media screen and (min-width: 768px) {
+  .faq {
+    padding: 64px 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .faq {
+    padding: 92px 0;
+  }
 }
 .faq-container {
   display: flex;
@@ -10,16 +21,17 @@
   align-items: center;
 
   gap: 32px;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 @media screen and (min-width: 1440px) {
   .faq-container {
     max-width: 768px;
     margin: 0 auto;
+    margin-bottom: 80px;
   }
 }
 .faq-title {
-  font-family: 'Cormorant', sans-serif;
+  font-family: 'Cormorant';
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
