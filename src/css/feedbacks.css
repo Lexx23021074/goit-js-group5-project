@@ -1,1 +1,233 @@
 /* Feedbacks section styles */
+
+.feedbacks {
+    background-color: #FBF9F1;
+    padding-bottom: 64px;
+}
+
+.feedbacks .container {
+    padding-top: 64px;
+}
+
+/* text */
+
+.feedbacks-h1 {
+    width: 335px;
+    margin: auto;
+    font-family: Cormorant;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -1%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+    .feedbacks-h1 {
+        width: 704px;
+    }
+}
+
+.feedbacks-p {
+    width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Mulish;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 24px;
+}
+@media only screen and (min-width: 768px) {
+    .feedbacks-p {
+        width: 600px;
+    }
+}
+@media only screen and (min-width: 1440px) {
+    .feedbacks-p {
+        width: 800px;
+    }
+}
+
+/* decorations */
+
+.feedbacks-h1::before {
+    content: '';
+    display: block;
+    margin: auto;
+    width: 299.5px;
+    height: 20.32px;
+    margin-bottom: 24px;
+
+    background-image: url('/img/decoration.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* slider */
+
+.testimonials-swiper {
+    max-width: 100%;
+    padding-bottom: 64px;
+    width: 335px;
+}
+
+@media only screen and (min-width: 768px) {
+    .testimonials-swiper {
+        width: 704px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .testimonials-swiper {
+        width: 1312px;
+    }
+}
+
+.testimonials-swiper .swiper-slide {
+    display: flex;
+    height: auto;
+    justify-content: left;
+}
+@media only screen and (min-width: 768px) {
+    .testimonials-swiper .swiper-slide {
+        width: 704px;
+    }
+}
+
+.testimonial-list {
+    display: flex;
+    box-sizing: border-box;
+}
+
+.testimonial-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    background-color: #FAF8F2;
+    box-sizing: border-box;
+    padding: 32px;
+    background-color: #FAF7E6;
+    height: 328px;
+    width: 100%;
+    max-width: 335px;
+}
+@media only screen and (min-width: 768px) {
+    .testimonial-card {
+        justify-content: space-evenly;
+        padding: 20px;
+        height: 372px;
+        width: 100%;
+        max-width: 218px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .testimonial-card {
+        height: 274px;
+        width: 100%;
+        max-width: 421px;
+        padding: 32px;
+    }
+}
+
+.testimonial-text {
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+    font-size: 18px;
+    margin-bottom: 24px;
+}
+@media only screen and (min-width: 768px) {
+    .testimonial-text {
+        margin-bottom: 24px;
+    }
+}
+
+.testimonial-author {
+    margin-top: auto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding: 0 10px;
+}
+
+.slider-controls .swiper-pagination {
+    position: static;
+    width: auto;
+    display: flex;
+    gap: 8px;
+}
+
+.slider-controls .swiper-pagination-bullet {
+    background-color: #B3B3B3;
+    opacity: 1;
+    width: 8px;
+    height: 8px;
+    transition: background-color 0.3s;
+}
+
+.slider-controls .swiper-pagination-bullet-active {
+    background-color: #000000;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-nav {
+    background-color: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #000000;
+}
+
+.btn-nav:hover,
+.btn-nav:focus {
+    background-color: #E6D357;
+    border: 2px solid #000000;
+}
+
+.btn-nav:active {
+    background-color: #FAF7E6;
+}
+
+.btn-nav:disabled {
+    background-color: #FFFFFF;
+    border-color: rgba(0, 0, 0, 0.2);
+    cursor: default;
+}
+
+.btn-nav svg {
+    fill: currentColor;
+    width: 24px;
+    height: 24px;
+}
+
+.btn-nav:disabled .icon {
+    fill: rgba(0, 0, 0, 0.2);
+}
