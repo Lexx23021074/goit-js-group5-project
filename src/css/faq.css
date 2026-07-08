@@ -1,1 +1,113 @@
 /* FAQ section styles */
+.faq {
+  background-color: var(--bg-color-scheme-2);
+  padding-block: 48px; /* ДОДАТИ, щоб вирівняти вертикальні відступи секції */
+}
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 100%; /* ДОДАТИ */
+  box-sizing: border-box; /* ДОДАТИ */
+  justify-content: center;
+  align-items: center;
+
+  gap: 32px;
+  padding: 0 16px; /* ЗМІНИТИ З padding-bottom: 40px; для безпечних бокових відступів на 320px */
+}
+@media screen and (min-width: 1440px) {
+  .faq-container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+.faq-title {
+  font-family: 'Cormorant', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+@media screen and (min-width: 1440px) {
+  .faq-title {
+    font-size: 48px;
+  }
+}
+.faq-text {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+}
+
+/* #region ACCORDITION */
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 1440px) {
+  .accordion-container {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+.ac {
+  /* margin-bottom: 16px; */
+  border: 2px solid #000000;
+  border-radius: 24px;
+  background-color: #faf7e6;
+  box-sizing: border-box;
+}
+
+.ac .ac-panel {
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-timing-function: ease;
+}
+.ac .ac-panel .ac-text {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+
+  padding: 20px 16px; /* ЗМІНИТИ З padding: 20px 24px; щоб текст не впирався в рамку на 320px */
+  padding-top: 0;
+}
+.ac.js-enabled .ac-panel {
+  visibility: hidden;
+}
+.ac.is-active .ac-panel {
+  visibility: visible;
+}
+.ac.is-active > .ac-header .ac-icon::after {
+  transform: translate(100%, -50%);
+}
+.ac-icon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.ac.is-active .ac-icon {
+  transform: rotate(45deg);
+}
+.ac .ac-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+
+  width: 100%;
+  box-sizing: border-box; /* ДОДАТИ */
+  padding: 20px 16px; /* ЗМІНИТИ З padding: 20px 24px; */
+  /* gap: 24px; */
+  background: transparent;
+  border: 0;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  margin: 0;
+}
+
+/* #endregion */

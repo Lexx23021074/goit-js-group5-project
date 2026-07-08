@@ -1,6 +1,7 @@
 /* Portfolio Section Styles */
 .portfolio {
-  padding: 64px 0;
+  padding: 64px 16px; /* ЗМІНИТИ З padding: 64px 0; для захисту від вилазіння на 320px */
+  box-sizing: border-box; /* ДОДАТИ */
   background-color: #fbf9f1;
 }
 
@@ -10,7 +11,7 @@
 }
 
 .portfolio-title {
-  font-family: "Cormorant Garamond", serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 32px;
   font-weight: 500;
   line-height: 1.2;
@@ -36,7 +37,7 @@
 
 .portfolio-filters-btn {
   font-family: var(--font-family-main);
-  font-size: 16px;
+  font-size: 14px; /* Опціонально зменшити з 16px для 320px */
   font-weight: 400;
   color: #000000;
   background-color: transparent;
@@ -171,7 +172,7 @@
     max-width: 342px;
   }
   .portfolio-filters-btn {
-    font-family: "Mulish", sans-serif;
+    font-family: 'Mulish', sans-serif;
     font-weight: 500;
     line-height: 1.5;
     color: #000000;

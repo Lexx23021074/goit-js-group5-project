@@ -1,5 +1,45 @@
-<section id="modal" class="modal">
+<section id="modal">
   <div class="container">
-    <a href="#">MODAL SECTION LOADED</a>
+    <!-- is-hidden -->
+    <div class="backdrop is-hidden" data-modal="success">
+      <div class="modal">
+        <button
+          type="button"
+          class="modal-close-btn"
+          data-modal-close
+          aria-label="Close modal"
+        >
+          <svg width="24" height="24">
+            <use href="./img/sprite.svg#close-icon"></use>
+          </svg>
+        </button>
+
+        <h2 class="modal-title">
+          Thank You for Your<br />
+          Inquiry!
+        </h2>
+
+        <img
+          class="modal-image"
+          src="./img/modal/success-modal@1x.jpg"
+          srcset="
+            ./img/modal/success-modal@1x.jpg 1x,
+            ./img/modal/success-modal@2x.jpg 2x
+          "
+          alt="Wedding invitation flat lay"
+          width="295"
+          height="200"
+        />
+
+        <p class="modal-text">
+          I have received your message and I'm so excited about your interest! I
+          will get in touch with you within 24-48 hours to discuss the details
+          of your wedding day. In the meantime, feel free to browse my portfolio
+          or follow me on Instagram for more inspiration.
+        </p>
+      </div>
+    </div>
+    <!-- Тимчасова кнопка для перевірки (додай будь-де в body) -->
+    <!-- <button type="button" data-modal-open>Test Open Modal</button> -->
   </div>
 </section>
