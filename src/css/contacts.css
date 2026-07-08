@@ -1,9 +1,22 @@
-
 .contacts {
-  max-width: 375px;
+  position: relative; /* 1. ДОДАТИ: щоб штучний фон розумів, за що триматися */
+  max-width: 335px;
   margin: 0 auto;
-  padding: 64px 20px;
+  padding: 64px 16px;
+  /* background-color: #fbf9f1; - 2. ПРИБРАТИ ЦЕЙ РЯДОК ЗВІДСИ */
+  box-sizing: border-box;
+}
+/* 3. ДОДАТИ ПОВНІСТЮ НОВИЙ БЛОК: він заллє фон від краю до краю */
+.contacts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
   background-color: #fbf9f1;
+  z-index: -1;
 }
 
 .contacts-info-wrapper {
@@ -12,14 +25,15 @@
 }
 
 .contacts-decor {
-  width: 335px;
+  width: 100%; /* ЗМІНИТИ З width: 335px; */
+  max-width: 335px; /* ДОДАТИ */
   height: 38px;
   fill: none;
   margin-bottom: 24px;
 }
 
 .contacts-title {
-  font-family: "Cormorant", sans-serif;
+  font-family: 'Cormorant', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 1.2;
@@ -30,7 +44,7 @@
 }
 
 .contacts-text {
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -58,7 +72,7 @@
 
 .contacts-info {
   margin: 0;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -85,7 +99,7 @@
 
 .contacts-form-text {
   margin: 0 0 8px;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -100,6 +114,7 @@
   padding: 8px 12px;
   height: 40px;
   background-color: #fbf9f1;
+  box-sizing: border-box; /* ДОДАТИ */
 }
 
 .contacts-textarea {
@@ -111,6 +126,7 @@
   padding: 12px;
   min-height: 180px;
   background-color: #fbf9f1;
+  box-sizing: border-box; /* ДОДАТИ */
 }
 
 .contacts-button {
@@ -124,45 +140,14 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
-
 
 .contacts-button:hover,
 .contacts-button:focus {
   border: 2px solid #dcc110;
   background-color: #fff;
 }
-
-
-.loader {
-  --color-1:  #C4A484;
-  --size: 1px;
-display: none;
-  width: calc(48 * var(--size));
-  height: calc(48 * var(--size));
-  background: var(--color-1);
-  animation: rotate 1s linear infinite;
-}
-
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg) scale(0.2);
-    border-radius: 10%;
-  }
-  50% {
-    transform: rotate(180deg) scale(1.5);
-    border-radius: 50%;
-  }
-  100% {
-    transform: rotate(360deg) scale(0.2);
-    border-radius: 10%;
-  }
-}
-.contacts-button.is-loading .loader {
-  display: inline-block;
-}
-
 
 @media screen and (min-width: 768px) {
   .contacts {
@@ -192,7 +177,6 @@ display: none;
     margin-bottom: 16px;
   }
 }
-
 
 @media screen and (min-width: 1440px) {
   .contacts {

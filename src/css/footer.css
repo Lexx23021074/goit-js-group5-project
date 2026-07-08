@@ -5,7 +5,8 @@
 .footer {
   background-color: var(--bg-color-scheme-2); /* Загальний фон */
   border-top: 1px solid rgba(28, 27, 23, 0.1);
-  padding: 40px 20px;
+  padding: 40px 16px; /* ЗМІНИТИ З padding: 40px 20px; щоб зовнішній відступ не ламав 320px */
+  box-sizing: border-box; /* ДОДАТИ */
 }
 
 .footer-container {
@@ -19,7 +20,7 @@
   ); /* Застосували фон футера */
   border: 2px solid var(--color-scheme-2-border); /* Товщина рамки 2px */
   border-radius: 24px;
-  padding: 48px 20px;
+  padding: 48px 16px; /* ЗМІНИТИ З padding: 48px 20px; для безпеки на 320px */
   gap: 24px; /* Оновлено на 24px за макетом */
 
   width: 100%;
@@ -67,9 +68,11 @@
   line-height: 1.5;
   color: #1c1b17;
 
-  width: 263px;
+  width: 100%; /* ЗМІНИТИ З width: 263px; */
+  max-width: 263px; /* ДОДАТИ */
   margin: 0 auto;
   text-align: center;
+  box-sizing: border-box; /* ДОДАТИ */
 }
 
 /* --- КОНТЕЙНЕРИ МЕНЮ ТА СОЦМЕРЕЖ --- */
