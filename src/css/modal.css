@@ -1,24 +1,19 @@
 .modal {
   position: relative;
-
   width: 335px;
   padding: 64px 20px;
-
   background: #fff;
   border-radius: 24px;
-
   max-width: 100%;
+
   max-height: calc(100vh - 40px);
-
-  /* overflow-y: auto; */
-  overflow: hidden;
-
-
-
-  border: 1px solid red;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-/* Кнопка закриття */
+
+
+/* ========  close btn ========*/
 
 .modal-close-btn {
   position: absolute;
@@ -48,7 +43,7 @@
   stroke: #666;
 }
 
-/* Заголовок */
+/* header */
 
 .modal-title {
   margin: 0 0 24px;
@@ -62,7 +57,7 @@
   color: #000;
 }
 
-/* Фото */
+/* photo */
 
 .modal-image {
   display: block;
@@ -73,7 +68,7 @@
   margin-bottom: 20px;
 }
 
-/* Текст */
+/* text */
 
 .modal-text {
   margin: 0;
@@ -115,9 +110,11 @@
   pointer-events: none;
 }
 
-.no-scroll {
+body.no-scroll {
   overflow: hidden;
-}  
+}
+
+ 
 
 
 /* ========= Tablet: 768px ========  */
@@ -126,7 +123,6 @@
     border-radius: 24px;
     padding: 64px 32px;
     width: 704px;
-    height: 700px;
     max-width: 768px;
   }
 
