@@ -91,3 +91,9 @@
 .mobile-menu-btn-action:focus {
   background-color: #fff;
 }
+
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
