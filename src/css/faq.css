@@ -1,7 +1,17 @@
 /* FAQ section styles */
 .faq {
   background-color: var(--bg-color-scheme-2);
-  padding-block: 48px; /* ДОДАТИ, щоб вирівняти вертикальні відступи секції */
+  padding: 64px 0;
+}
+@media screen and (min-width: 768px) {
+  .faq {
+    padding: 64px 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .faq {
+    padding: 92px 0;
+  }
 }
 .faq-container {
   display: flex;
@@ -19,6 +29,7 @@
   .faq-container {
     max-width: 768px;
     margin: 0 auto;
+    margin-bottom: 80px;
   }
 }
 .faq-title {
