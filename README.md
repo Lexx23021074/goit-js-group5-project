@@ -59,14 +59,15 @@ npm run build
 
 ## 👥 Команда проєкту
 
-| Ім'я та прізвище | Username | Роль |
+| Ім'я та прізвище | Username |                                                         | Роль |        | Секція                       |
 | :--- | :--- | :--- |
-| **Тарас Федорів** | [Lexx23021074](https://github.com/Lexx23021074) | Team Lead |
-| **Кузьмів Регіна** | [regina-kuzmiv](https://github.com/regina-kuzmiv) | Scrum Master |
-| **Олексій** | [OlexaGryschenko](https://github.com/OlexaGryschenko) | Developer |
-| **Кучмій Володимир** | [kuchmiy-v](https://github.com/kuchmiy-v) | Developer |
-| **Олійник Вікторія** | [vivivihadi](https://github.com/vivivihadi) | Developer |
-| **Шевчук Володимир** | [ghgerzx007-netizen](https://github.com/ghgerzx007-netizen) | Developer |
-| **Дмитро** | [dmytro-b-fs](https://github.com/dmytro-b-fs) | Developer |
+| **Тарас Федорів**      | [Lexx23021074](https://github.com/Lexx23021074)              | Team Lead |   | Footer                       |
+| **Кузьмів Регіна**     | [regina-kuzmiv](https://github.com/regina-kuzmiv)            | Scrum Master || FAQ                          |
+| **Олексій  Грищенко**  | [AlexGry](https://github.com/OlexaGryschenko)                | Developer |   | Header,Success Modal, Sprite |
+| **Кучмій Володимир**   | [kuchmiy-v](https://github.com/kuchmiy-v)                    | Developer |   | About                        |
+| **Олійник Вікторія**   | [vivivihadi](https://github.com/vivivihadi)                  | Developer |   | Portfolio                    |
+| **Шевчук Володимир**   | [ghgerzx007-netizen](https://github.com/ghgerzx007-netizen)  | Developer |   | Benefits                     |
+| **Дмитро**             | [dmytro-b-fs](https://github.com/dmytro-b-fs)                | Developer |   | Hero                         |
+| **Квятковська Поліна** | [vivivihadi](https://github.com/vivivihadi)                  | Developer |   | Feedbacks                    |
 
 ---
