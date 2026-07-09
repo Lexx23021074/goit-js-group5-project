@@ -5,7 +5,7 @@
 .footer {
   background-color: var(--bg-color-scheme-2); /* Загальний фон */
   border-top: 1px solid rgba(28, 27, 23, 0.1);
-  padding: 40px 16px; /* ЗМІНИТИ З padding: 40px 20px; щоб зовнішній відступ не ламав 320px */
+  padding: 40px 0; /* ЗМІНИТИ З padding: 40px 20px; щоб зовнішній відступ не ламав 320px */
   box-sizing: border-box; /* ДОДАТИ */
 }
 
