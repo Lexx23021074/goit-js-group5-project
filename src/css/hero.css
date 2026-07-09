@@ -1,8 +1,7 @@
 /* Hero section styles */
 
 .hero-title {
-  /* font-family: var(--second-family); */
-  font-family: 'Cormorant', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
   font-size: 40px;
   line-height: 1.2;

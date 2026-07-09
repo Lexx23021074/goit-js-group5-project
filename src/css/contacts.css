@@ -193,4 +193,7 @@
   .contacts-title {
     font-size: 48px;
   }
+  .contacts {
+    padding: 92px 0;
+  }
 }

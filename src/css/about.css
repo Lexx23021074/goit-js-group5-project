@@ -26,7 +26,7 @@
 }
 
 .about-title.about-decoration {
-  font-family: 'Cormorant', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
   font-size: 28px;
   line-height: 1.2;
@@ -103,7 +103,7 @@
     width: 779px;
   }
 
-  .about-title {
+  .about-title.about-decoration {
     font-size: 40px;
   }
 
