@@ -66,7 +66,6 @@ npm run build
 | **Кучмій Володимир** | [kuchmiy-v](https://github.com/kuchmiy-v) | Developer | About |
 | **Олійник Вікторія** | [vivivihadi](https://github.com/vivivihadi) | Developer | Portfolio |
 | **Шевчук Володимир** | [ghgerzx007-netizen](https://github.com/ghgerzx007-netizen) | Developer | Benefits |
-| **Дмитро** | [dmytro-b-fs](https://github.com/dmytro-b-fs) | Developer | Hero |
-| **Квятковська Поліна** | [vivivihadi](https://github.com/vivivihadi) | Developer | Feedbacks |
-
+| **Дмитро Бураков** | [dmytro-b-fs](https://github.com/dmytro-b-fs) | Developer | Hero |
+| **Квятковська Поліна** | [polinakviat](https://github.com/vivivihadi) | Developer | Feedbacks |
 ---
