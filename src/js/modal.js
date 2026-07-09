@@ -5,7 +5,7 @@ const body = document.body;
 
 const openModal = () => {
   backdrop.classList.remove('is-hidden');
-  body.classList.add('no-scroll');
+  document.body.classList.add('no-scroll');
   document.addEventListener('keydown', onEscKeyPress);
 };
 

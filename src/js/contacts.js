@@ -16,19 +16,17 @@ function hideLoader() {
 
 function openSeccessModal() {
   const modal = document.querySelector('.success-modal');
-  modal.classList.add('is-hidden');
-  if (!modal) {
-    return;
-  }
+  if (!modal) return;
+  modal.classList.remove('is-hidden');  
 }
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  const { name, phone, message, coment } = e.target.elements;
+  const { name, phone, comment } = e.target.elements;
   const formData = {
     name: name.value.trim(),
-    phone: phone.value.trim(),
-    message: coment.value.trim(),
+    phone: phone.value.replace(/\D/g, ''),
+    message: comment.value.trim(),
   };
   if (name.value.trim() === '' || phone.value.trim() === '') {
     return;
