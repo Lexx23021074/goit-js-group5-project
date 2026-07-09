@@ -1,8 +1,7 @@
+
+
 .benefits {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
+ 
   background-color: #fbf9f1;
 }
 
@@ -82,6 +81,11 @@
 
 
 @media screen and (min-width: 768px) {
+  .benefits{
+    max-width: 768px;
+    display: flex;
+    margin: 0 auto;
+  }
   .benefits-decor-icon {
     padding-bottom: 16px;
   }
@@ -106,8 +110,16 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .benefits{
+    max-width: 1440px;
+    display: flex;
+    margin: 0 auto;
+  }
   .benefits-card,
   .benefits-card-tall {
     width: 320px;
+  }
+  .benefits-title {
+    width: 768px;
   }
 }
