@@ -215,17 +215,14 @@
     cursor: pointer;
     color: #000000;
 }
-
 .btn-nav:hover,
 .btn-nav:focus {
     background-color: #E6D357;
     border: 2px solid #000000;
 }
-
 .btn-nav:active {
     background-color: #FAF7E6;
 }
-
 .btn-nav:disabled {
     background-color: #FFFFFF;
     border-color: rgba(0, 0, 0, 0.2);
@@ -237,7 +234,6 @@
     width: 24px;
     height: 24px;
 }
-
 .btn-nav:disabled .icon {
     fill: rgba(0, 0, 0, 0.2);
 }
