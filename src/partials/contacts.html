@@ -47,6 +47,8 @@
               type="text"
               name="name"
               id="name"
+              pattern=".{2,}"
+              required
               placeholder="Maria"
             />
           </label>
@@ -57,6 +59,8 @@
               type="tel"
               name="phone"
               id="phone"
+              pattern="[0-9]{12}"
+              required
               placeholder="+1 (202) 111-2323"
             />
           </label>
