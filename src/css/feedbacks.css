@@ -4,9 +4,19 @@
     background-color: #FBF9F1;
     padding-bottom: 64px;
 }
+@media only screen and (min-width: 1440px) {
+    .feedbacks {
+        padding-bottom: 92px;
+    }
+}
 
 .feedbacks .container {
     padding-top: 64px;
+}
+@media only screen and (min-width: 1440px) {
+    .feedbacks .container {
+        padding-top: 92px;
+    }
 }
 
 /* text */
@@ -25,7 +35,7 @@
     justify-content: center;
 }
 @media only screen and (min-width: 768px) {
-    .feedbacks-h1 {
+    .feedbacks-h2 {
         width: 704px;
     }
 }
