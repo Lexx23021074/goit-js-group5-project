@@ -1,21 +1,35 @@
 /* FAQ section styles */
 .faq {
   background-color: var(--bg-color-scheme-2);
+  padding: 64px 0;
+}
+@media screen and (min-width: 768px) {
+  .faq {
+    padding: 64px 0;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .faq {
+    padding: 92px 0;
+  }
 }
 .faq-container {
   display: flex;
   flex-direction: column;
   text-align: center;
+  width: 100%; /* ДОДАТИ */
+  box-sizing: border-box; /* ДОДАТИ */
   justify-content: center;
   align-items: center;
 
   gap: 32px;
-  padding-bottom: 40px;
+  padding: 0 16px; /* ЗМІНИТИ З padding-bottom: 40px; для безпечних бокових відступів на 320px */
 }
 @media screen and (min-width: 1440px) {
   .faq-container {
     max-width: 768px;
     margin: 0 auto;
+    margin-bottom: 80px;
   }
 }
 .faq-title {
@@ -69,7 +83,7 @@
   line-height: 150%;
   margin: 0;
 
-  padding: 20px 24px;
+  padding: 20px 16px; /* ЗМІНИТИ З padding: 20px 24px; щоб текст не впирався в рамку на 320px */
   padding-top: 0;
 }
 .ac.js-enabled .ac-panel {
@@ -95,7 +109,8 @@
   text-align: left;
 
   width: 100%;
-  padding: 20px 24px;
+  box-sizing: border-box; /* ДОДАТИ */
+  padding: 20px 16px; /* ЗМІНИТИ З padding: 20px 24px; */
   /* gap: 24px; */
   background: transparent;
   border: 0;

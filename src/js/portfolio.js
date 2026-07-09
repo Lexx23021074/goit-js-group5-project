@@ -58,7 +58,7 @@ function renderFilterButtons(categories) {
     .map(
       category => `
       <li class="portfolio-filters-item" role="presentation">
-        <button type="button" class="portfolio-filters-btn" role="tab" aria-selected="false" data-category-id="${category._id || category.id}">${escapeHtml(category.name)}</button>
+        <button type="button" class="portfolio-filters-btn" role="tab" aria-selected="false" data-category-id="${category._id || category.id}">${escapeHtml(category.category)}</button>
       </li>
     `
     )
@@ -111,7 +111,7 @@ function buildPortfolioUrl({ page, limit, categoryId }) {
   url.searchParams.set('page', page);
   url.searchParams.set('limit', limit);
   if (categoryId) {
-    url.searchParams.set('category', categoryId);
+    url.searchParams.set('categoryId', categoryId);
   }
   return url.toString();
 }
