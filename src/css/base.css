@@ -1,8 +1,16 @@
 :root {
   --primary-text: #242424;
   --accent-color: #41d1ff;
+  --focus-color: #b09a0c; /* Новий колір для фокусу посилань */
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --main-font: 'Inter', sans-serif;
+
+  /* Робимо Mulish головним шрифтом проєкту */
+  --main-font: 'Mulish', sans-serif;
+
+  --color-scheme-2-border: #000000;
+  --bg-color-scheme-2: #fbf9f1; /* Загальний фон сторінки */
+  --bg-color-scheme-2-foreground: #faf7e6; /* Точний фон картки футера */
+  --color-scheme-2-text: #000000;
 }
 
 *,
@@ -12,7 +20,9 @@
 }
 
 body {
-  font-family: var(--main-font);
+  font-family: var(
+    --main-font
+  ); /* Тепер усі тексти за замовчуванням будуть Mulish */
   color: var(--primary-text);
   margin: 0;
   display: flex;
@@ -22,4 +32,14 @@ body {
 
 main {
   flex-grow: 1;
+}
+/* Глобальне вимкнення стандартного синього контуру */
+a:focus,
+a:focus-visible {
+  outline: none;
+}
+
+/* Глобальне прибирання спалаху на мобільних */
+html {
+  -webkit-tap-highlight-color: transparent;
 }
