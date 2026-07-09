@@ -16,7 +16,7 @@
 .about-description {
   /* width: 100%; */
   width: 100%; /* ЗМІНИТИ З 335px */
-  max-width: 335px; /* ДОДАТИ */
+  width: 335px; /* ДОДАТИ */
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -60,7 +60,7 @@
 
 .about-img {
   width: 100%; /* ЗМІНИТИ З 335px */
-  max-width: 335px; /* ДОДАТИ */
+  width: 335px; /* ДОДАТИ */
   height: auto; /* ЗМІНИТИ З 273px */
   flex-shrink: 0;
 }
