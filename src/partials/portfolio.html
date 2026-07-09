@@ -1,4 +1,55 @@
-<section id="portfolio" class="portfolio">
-  <div class="container"></div>
-  <a href="#">PORTFOLIO SECTION LOADED</a>
+<section class="portfolio">
+  <div class="container">
+    <img
+      class="decoration-svg"
+      src="./img/decoration.svg"
+      alt="Decoration"
+      aria-hidden="true"
+      width="300"
+      height="20"
+    />
+    <h2 class="portfolio-title">Portfolio Highlights</h2>
+    <ul
+      class="portfolio-filters"
+      id="portfolioFilters"
+      role="tablist"
+      aria-label="Portfolio Filters"
+    >
+      <li class="portfolio-filters-item" role="presentation">
+        <button
+          type="button"
+          class="portfolio-filters-btn active"
+          role="tab"
+          aria-selected="true"
+          aria-controls="all"
+          id="all-tab"
+        >
+          All photos
+        </button>
+      </li>
+    </ul>
+    <div
+      class="portfolio-loader"
+      id="portfolioLoader"
+      aria-live="polite"
+      aria-hidden="true"
+    >
+      <span class="portfolio-loader-spinner"></span>
+      <span class="portfolio-loader-text">Loading...</span>
+    </div>
+
+    <ul class="gallery-grid" id="galleryGrid" aria-live="polite">
+      <li class="gallery-grid-item" aria-labelledby="all-tab">
+        <img
+          src="https://ftp.goit.study/img/weddingPhotos/12492876436a1003120787.png"
+          alt="Portfolio Image"
+          loading="lazy"
+        />
+      </li>
+    </ul>
+
+    <button type="button" class="btn-show-more" id="btnShowMore">
+      Show More
+    </button>
+  </div>
 </section>

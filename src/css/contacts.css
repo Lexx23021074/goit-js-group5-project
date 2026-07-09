@@ -1,223 +1,22 @@
-/* 
-
 .contacts {
-  width: 375px;
- padding: 64px 20px;
+  position: relative; /* 1. ДОДАТИ: щоб штучний фон розумів, за що триматися */
+  max-width: 335px;
   margin: 0 auto;
+  padding: 64px 16px;
+  /* background-color: #fbf9f1; - 2. ПРИБРАТИ ЦЕЙ РЯДОК ЗВІДСИ */
+  box-sizing: border-box;
+}
+/* 3. ДОДАТИ ПОВНІСТЮ НОВИЙ БЛОК: він заллє фон від краю до краю */
+.contacts::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
   background-color: #fbf9f1;
-  display: flex;
-}
-
-
-
-.contacts-info-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.contacts-decor {
-  width: 335px;
-  height: 38px;
-  fill: none;
-  margin-bottom: 24px;
-}
-
-.contacts-title {
-  font-family: "Cormorant", sans-serif;
-  font-weight: 500;
-  font-size: 32px;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: #000;
-  margin: 0 0 24px 0;
-}
-
-.contacts-text {
-  font-family: "Mulish", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.5;
-  text-align: center;
-  color: #000;
-  margin: 0 0 24px 0;
-}
-
-.contacts-info-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 12px;
-  text-decoration: underline;
-}
-
-.contacts-info-item:last-child {
-  margin-bottom: 24px;
-}
-
-.contacts-icon {
-  fill: none;
-  margin-right: 16px; 
-  flex-shrink: 0;
-}
-
-.contacts-info {
-  margin: 0;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  font-family: "Mulish", sans-serif;
-}
-
-.contacts-info a {
-  color: #000;
-  text-decoration: none;
-}
-
-
-.contacts-form {
-  display: flex;
-  flex-direction: column;
-}
-
-
-.contacts-form-label {
-  display: block;
-  margin: 0 0 24px 0; 
-}
-
-.contacts-form-text {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #000;
-  margin: 0 0 8px 0; 
-  font-family: "Mulish", sans-serif;
-}
-
-.contacts-input {
-  display: block;
-  border: 2px solid #000;
-  border-radius: 6px;
-  padding: 8px 12px;
-  min-width: 335px;
-  height: 40px;
-  background-color: #fbf9f1;
-}
-
-.contacts-textarea {
-  display: block;
-  resize: none;
-  border: 2px solid #000;
-  border-radius: 6px;
-  padding: 12px;
-  min-width: 335px;
-  height: 180px;
-  background: transparent;
-}
-
-
-.contacts-form-label:last-of-type {
-  margin-bottom: 24px;
-}
-
-.contacts-button {
-  border: 1px solid #dcc110;
-  border-radius: 6px;
-  padding: 10px 24px;
-  width: 335px;
-  height: 44px;
-  background: #dcc110;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: "Mulish", sans-serif;
-}
-
-.contacts-button:hover,
-.contacts-button:focus {
-  border: 2px solid #dcc110;
-  background-color: #fff;
-}
-
-
-
-@media screen and (min-width:768px){
-.contacts{
-    padding: 64px 32px; 
-    min-width: 768px;
-    background-color:#fbf9f1;
-   height: auto;
-}
-.contacts-info-wrapper{
-    
-    align-items: flex-start;
-}
-.contacts-decor{
-    width: 300px;
-    height: 21px;
-}
-.contacts-title,
-.contacts-text{
-    text-align: left;
-}
-.contacts-title{
-    font-family: "Cormorant", sans-serif;
-}
-.contacts-input{
-    width: 100%
-}
-.contacts-textarea{
-    width : 100%;
-    min-height: 180px;
-}
-.contacts-info-item{
-    margin-bottom: 16px;
-}
-.contacts-text {
-    margin-bottom: 32px;
-}
-
-}
-
-@media screen and (min-width: 1440px) {
-    .contacts{
-        min-width:1440px;
-        padding: 92px 64px;
-        display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    }
-    .contacts-input{
-    width: 100%
-}
-.contacts-title{
-    font-size: 48px;
-}
-    
-    .contacts-form{
-        align-items: flex-start;
-    }
-
-  .contacts-info-wrapper,
-  .contacts-form {
-    width: calc((100% - 24px) / 2);
-  }
-  .contacts-input{
-    width: 644px; 
-}
-.contacts-textarea{
-    width : 644px;
-    min-height: 180px;
-}
-}
-
-     */
-.contacts {
-  max-width: 375px;
-  margin: 0 auto;
-  padding: 64px 20px;
-  background-color: #fbf9f1;
+  z-index: -1;
 }
 
 .contacts-info-wrapper {
@@ -226,14 +25,15 @@
 }
 
 .contacts-decor {
-  width: 335px;
+  width: 100%; /* ЗМІНИТИ З width: 335px; */
+  max-width: 335px; /* ДОДАТИ */
   height: 38px;
   fill: none;
   margin-bottom: 24px;
 }
 
 .contacts-title {
-  font-family: "Cormorant", sans-serif;
+  font-family: 'Cormorant', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 1.2;
@@ -244,7 +44,7 @@
 }
 
 .contacts-text {
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.5;
@@ -272,7 +72,7 @@
 
 .contacts-info {
   margin: 0;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -299,7 +99,7 @@
 
 .contacts-form-text {
   margin: 0 0 8px;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -314,6 +114,7 @@
   padding: 8px 12px;
   height: 40px;
   background-color: #fbf9f1;
+  box-sizing: border-box; /* ДОДАТИ */
 }
 
 .contacts-textarea {
@@ -325,6 +126,7 @@
   padding: 12px;
   min-height: 180px;
   background-color: #fbf9f1;
+  box-sizing: border-box; /* ДОДАТИ */
 }
 
 .contacts-button {
@@ -338,7 +140,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Mulish', sans-serif;
 }
 
 .contacts-button:hover,
@@ -346,7 +148,6 @@
   border: 2px solid #dcc110;
   background-color: #fff;
 }
-
 
 @media screen and (min-width: 768px) {
   .contacts {
@@ -376,7 +177,6 @@
     margin-bottom: 16px;
   }
 }
-
 
 @media screen and (min-width: 1440px) {
   .contacts {
