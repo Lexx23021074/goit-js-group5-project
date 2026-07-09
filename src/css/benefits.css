@@ -4,7 +4,6 @@
   align-items: center;
   box-sizing: border-box;
   background-color: #fbf9f1;
-  padding-block: 48px; /* ДОДАТИ замість порожніх відступів */
 }
 
 .benefits-decor-icon {
@@ -21,9 +20,8 @@
   letter-spacing: -0.01em;
   text-align: center;
   color: #000;
-  width: 100%; /* ЗМІНИТИ З 335px */
-  max-width: 335px; /* ДОДАТИ */
-  padding-bottom: 40px;
+  width: 100%;
+  max-width: 335px;
 }
 
 .benefits-list {
@@ -33,6 +31,8 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
+  max-width: 335px;
 }
 
 .benefits-card,
@@ -40,8 +40,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%; /* ЗМІНИТИ З 335px */
-  max-width: 335px; /* ДОДАТИ */
+  width: 100%;
+  max-width: 335px;
 }
 
 .benefits-card-icon {
@@ -65,7 +65,7 @@
   line-height: 1.5;
   text-align: center;
   color: #000;
-  margin-bottom: 12px;
+  margin: 0 0 12px;
   font-family: 'Mulish', sans-serif;
 }
 
@@ -77,6 +77,7 @@
   color: #000;
   font-family: 'Mulish', sans-serif;
 }
+
 .benefits-icon {
   fill: none;
 }
@@ -88,16 +89,19 @@
 
   .benefits-title {
     width: 704px;
+    max-width: none;
   }
 
   .benefits-list {
     flex-direction: row;
     align-items: flex-start;
+    max-width: none;
   }
 
   .benefits-card,
   .benefits-card-tall {
     width: 218px;
+    max-width: none;
   }
 
   .benefits-card-title {

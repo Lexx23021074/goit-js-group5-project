@@ -1,8 +1,8 @@
 .contacts {
   position: relative; /* 1. ДОДАТИ: щоб штучний фон розумів, за що триматися */
-  max-width: 335px;
+  /* max-width: 335px; */
   margin: 0 auto;
-  padding: 64px 16px;
+  padding: 64px 0;
   /* background-color: #fbf9f1; - 2. ПРИБРАТИ ЦЕЙ РЯДОК ЗВІДСИ */
   box-sizing: border-box;
 }
@@ -22,25 +22,18 @@
 .contacts-info-wrapper {
   display: flex;
   flex-direction: column;
-}
-
-.contacts-decor {
-  width: 100%; /* ЗМІНИТИ З width: 335px; */
-  max-width: 335px; /* ДОДАТИ */
-  height: 38px;
-  fill: none;
-  margin-bottom: 24px;
+  gap: 24px;
 }
 
 .contacts-title {
-  font-family: 'Cormorant', sans-serif;
+  font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 1.2;
   letter-spacing: -0.01em;
   text-align: center;
   color: #000;
-  margin: 0 0 24px;
+  /* margin: 0 0 24px; */
 }
 
 .contacts-text {
@@ -50,18 +43,23 @@
   line-height: 1.5;
   text-align: center;
   color: #000;
-  margin: 0 0 24px;
+  margin-bottom: 8px;
+  /* margin: 0 0 24px; */
 }
-
+.contacts-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .contacts-info-item {
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   text-decoration: underline;
 }
 
 .contacts-info-item:last-child {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 }
 
 .contacts-icon {
@@ -90,21 +88,21 @@
 
 .contacts-form-label {
   display: block;
-  margin: 0 0 24px;
+  margin-bottom: 24px;
 }
 
 .contacts-form-label:last-of-type {
   margin-bottom: 24px;
 }
 
-.contacts-form-text {
+/* .contacts-form-text {
   margin: 0 0 8px;
   font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: #000;
-}
+} */
 
 .contacts-input {
   display: block;
@@ -115,6 +113,7 @@
   height: 40px;
   background-color: #fbf9f1;
   box-sizing: border-box; /* ДОДАТИ */
+  margin-top: 8px;
 }
 
 .contacts-textarea {
@@ -127,13 +126,14 @@
   min-height: 180px;
   background-color: #fbf9f1;
   box-sizing: border-box; /* ДОДАТИ */
+  margin-top: 8px;
 }
 
 .contacts-button {
   border: 1px solid #dcc110;
   border-radius: 6px;
   padding: 10px 24px;
-  width: 100%;
+  width: 310px;
   height: 44px;
   background: #dcc110;
   display: flex;
@@ -150,11 +150,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .contacts {
-    max-width: 768px;
-    padding: 64px 32px;
-  }
-
   .contacts-info-wrapper {
     align-items: flex-start;
   }
@@ -179,26 +174,23 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .contacts {
-    max-width: 1440px;
-    padding: 92px 64px;
+  .contacts-container {
     display: flex;
-    gap: 24px;
+    justify-content: space-between;
     align-items: flex-start;
+    gap: 64px;
   }
 
   .contacts-info-wrapper,
   .contacts-form-wrapper {
-    width: calc((100% - 24px) / 2);
+    flex: 1;
+  }
+
+  .contacts-form-wrapper {
+    max-width: 644px;
   }
 
   .contacts-title {
     font-size: 48px;
-  }
-
-  .contacts-input,
-  .contacts-textarea,
-  .contacts-button {
-    max-width: 644px;
   }
 }
