@@ -15,9 +15,11 @@ function hideLoader() {
 }
 
 function openSeccessModal() {
-  const modal = document.querySelector('.success-modal');
+  const modal = document.querySelector('[data-modal="success"]');
+  
   if (!modal) return;
   modal.classList.remove('is-hidden');  
+  
 }
 
 form.addEventListener('submit', async e => {
