@@ -1,5 +1,6 @@
 import axios from 'axios';
 import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const form = document.querySelector('.contacts-form');
 const btn = document.querySelector('.contacts-button');
@@ -25,9 +26,22 @@ function openSeccessModal() {
 form.addEventListener('submit', async e => {
   e.preventDefault();
   const { name, phone, comment } = e.target.elements;
+
+  const cleanedPhone = phone.value.replace(/\D/g, '');
+  console.log('Відправка пішла. Довжина номера:', cleanedPhone.length);
+  
+  if (cleanedPhone.length !== 12) {
+    iziToast.warning({
+      title: 'Warning',
+      message: 'Phone number must contain exactly 12 digits.',
+      position: 'topRight'
+    });
+    return; 
+  }
+
   const formData = {
     name: name.value.trim(),
-    phone: phone.value.replace(/\D/g, ''),
+    phone: cleanedPhone,
     message: comment.value.trim(),
   };
   if (name.value.trim() === '' || phone.value.trim() === '') {
